@@ -1,23 +1,30 @@
  export default function Home() {
   const skills = [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "HTML",
-    "CSS",
-    "GitHub",
-    "Shopify",
-    "Etsy",
-    "WordPress",
-    "SEO",
-    "Google Analytics",
-    "AI Prompting",
-    "ChatGPT",
-    "Claude",
-    "Content Strategy",
-    "Digital Marketing",
-  ];
-
+  {
+    category: "Technical Skills",
+    items: ["Next.js", "React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Git & GitHub", "Responsive Web Design"],
+  },
+  {
+    category: "Website & E-commerce",
+    items: ["Shopify", "WordPress", "GoDaddy", "Bluehost", "SEO", "Content Management", "Website Planning", "UX", "Product Listing Optimization"],
+  },
+  {
+    category: "AI & Digital Productivity",
+    items: ["ChatGPT", "Claude", "GitHub Copilot", "Google Gemini", "Grok", "Microsoft Copilot", "Canva AI", "Microsoft Designer", "AI Prompt Engineering", "AI Content Creation"],
+  },
+  {
+    category: "Business & Marketing",
+    items: ["Business Analysis", "Digital Marketing", "Brand Strategy", "Google Analytics", "Customer Experience", "Content Strategy", "Email Marketing", "Market Research", "Social Media Marketing"],
+  },
+  {
+    category: "Education & Leadership",
+    items: ["Academic Tutoring", "ESL Student Support", "Math Tutoring", "Teacher Assistant", "Parent Communication", "Student Mentoring", "Cross-cultural Communication"],
+  },
+  {
+    category: "Professional Strengths",
+    items: ["Problem Solving", "Critical Thinking", "Adaptability", "Entrepreneurship", "Continuous Learning", "Communication", "Organization", "Attention to Detail"],
+  },
+];
   const work = [
     {
       title: "Lucky Alanka",
@@ -157,14 +164,11 @@
             About
           </p>
           <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">
-            I bridge business and technology through real digital projects.
-          </h2>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            My journey connects Cambodia, business, digital marketing, and
-            computer science in the United States. I am passionate about building
-            websites, improving customer experiences, exploring AI, and helping
-            businesses use technology in a clear and practical way.
-          </p>
+  I connect computer science, business, and digital strategy to build practical solutions.
+</h2>
+<p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+  My journey began in Cambodia and continued in the United States through UCLA Extension, UIC, and Truman College. Along the way, I developed a strong interest in computer science, digital marketing, e-commerce, AI tools, and entrepreneurship. I enjoy building websites, organizing content, improving customer experiences, and helping businesses use technology in a clear and practical way.
+</p>
         </div>
       </section>
 
@@ -214,27 +218,40 @@
       </section>
 
       <section id="skills" className="border-t border-slate-200 bg-slate-50 px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-600">
-            Skills
-          </p>
-          <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">
-            Tools I use and skills I’m building.
-          </h2>
+  <div className="mx-auto max-w-6xl">
+    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-600">
+      Technical Skills & Expertise
+    </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            {skills.map((skill) => (
+    <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">
+      Building practical solutions by combining technology, business, AI, and communication.
+    </h2>
+
+    <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {skills.map((group) => (
+        <div
+          key={group.category}
+          className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+        >
+          <h3 className="text-lg font-semibold text-slate-950">
+            {group.category}
+          </h3>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {group.items.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
+                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700"
               >
                 {skill}
               </span>
             ))}
           </div>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       <section id="vision" className="px-6 py-24">
         <div className="mx-auto max-w-6xl rounded-[2rem] bg-slate-950 p-10 text-white md:p-14">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
@@ -252,26 +269,49 @@
         </div>
       </section>
 
-      <section id="contact" className="border-t border-slate-200 px-6 py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-600">
-            Contact
-          </p>
-          <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-            Let’s connect.
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            I’m open to opportunities in website coordination, e-commerce,
-            digital marketing, business technology, and AI-assisted digital work.
-          </p>
-          <a
-            href="mailto:hello@sopanhakhim.com"
-            className="mt-8 inline-flex rounded-full bg-violet-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-violet-700"
-          >
-            Email Me
-          </a>
-        </div>
-      </section>
+    <section id="contact" className="border-t border-slate-200 px-6 py-24">
+  <div className="mx-auto max-w-3xl text-center">
+    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-600">
+      Contact
+    </p>
+
+    <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
+      Let's build something meaningful.
+    </h2>
+
+    <p className="mt-6 text-lg leading-8 text-slate-600">
+      I'm open to opportunities in web development, business technology,
+      e-commerce, AI, digital marketing, and software development. Feel free
+      to connect if you'd like to collaborate or discuss new opportunities.
+    </p>
+
+    <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+      <a
+        href="mailto:Khimsopanha123@gmail.com"
+        className="rounded-full bg-violet-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-violet-700"
+      >
+        📧 Email Me
+      </a>
+
+      <a
+        href="https://github.com/khimsopanha123-blip"
+        target="_blank"
+        rel="noreferrer"
+        className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="#"
+        className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
+      >
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
     </main>
   );
 }
