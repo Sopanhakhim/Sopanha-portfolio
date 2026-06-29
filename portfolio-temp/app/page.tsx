@@ -1,3 +1,7 @@
+ import Hero from "../components/Hero";
+ import Certifications from "../components/Certifications";
+ import Timeline from "../components/Timeline";
+ import Projects from "../components/Projects";
  export default function Home() {
   const skills = [
   {
@@ -75,42 +79,41 @@
 
   return (
     <main className="min-h-screen bg-white text-slate-950">
-      <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <p className="font-semibold tracking-tight">Sopanha Khim</p>
-          <div className="hidden gap-6 text-sm font-medium text-slate-600 md:flex">
-            <a href="#about" className="hover:text-violet-600">
-              About
-            </a>
-            <a href="#work" className="hover:text-violet-600">
-              Work
-            </a>
-            <a href="#skills" className="hover:text-violet-600">
-              Skills
-            </a>
-            <a href="#vision" className="hover:text-violet-600">
-              Vision
-            </a>
-            <a href="#contact" className="hover:text-violet-600">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-      <section id="about" className="border-t border-slate-200 bg-slate-50 px-6 py-24">
+<div className="hidden gap-6 text-sm font-medium text-slate-600 md:flex">
+  <a href="#about" className="hover:text-violet-600">
+    About
+  </a>
+  <a href="#timeline" className="hover:text-violet-600">
+    Journey
+  </a>
+  <a href="#work" className="hover:text-violet-600">
+    Projects
+  </a>
+  <a href="#skills" className="hover:text-violet-600">
+    Skills
+  </a>
+  <a href="#certifications" className="hover:text-violet-600">
+    Certifications
+  </a>
+  <a href="#contact" className="hover:text-violet-600">
+    Contact
+  </a>
+</div>
+  <section id="about" className="border-t border-slate-200 bg-slate-50 px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-600">
             About
           </p>
           <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">
-  I connect computer science, business, and digital strategy to build practical solutions.
+ I connect computer science, business, and AI to build practical digital solutions.
 </h2>
 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-  My journey began in Cambodia and continued in the United States through UCLA Extension, UIC, and Truman College. Along the way, I developed a strong interest in computer science, digital marketing, e-commerce, AI tools, and entrepreneurship. I enjoy building websites, organizing content, improving customer experiences, and helping businesses use technology in a clear and practical way.
+  My journey began in Cambodia and continued in the United States through UCLA Extension, UIC, and Truman College. Along the way, I developed a strong interest in computer science, digital marketing, e-commerce, AI, and entrepreneurship. I enjoy building websites, organizing content, improving customer experiences, and helping businesses use technology in a clear and practical way.
 </p>
         </div>
       </section>
-
+<Timeline />
+<Projects />
       <section id="work" className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-600">
@@ -191,6 +194,7 @@
     </div>
   </div>
 </section>
+<Certifications />
       <section id="vision" className="px-6 py-24">
         <div className="mx-auto max-w-6xl rounded-[2rem] bg-slate-950 p-10 text-white md:p-14">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
@@ -231,22 +235,23 @@
       >
         📧 Email Me
       </a>
+<a
+  href="https://github.com/khimsopanha123-blip"
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
+>
+  💻 GitHub
+</a>
 
-      <a
-        href="https://github.com/khimsopanha123-blip"
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
-      >
-        GitHub
-      </a>
-
-      <a
-        href="#"
-        className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
-      >
-        LinkedIn
-      </a>
+<a
+  href="https://linkedin.com/in/khimsopanha123"
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
+>
+  🔗 LinkedIn
+</a>
     </div>
   </div>
 </section>
