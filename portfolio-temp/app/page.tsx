@@ -79,7 +79,6 @@
 
   return (
     <main className="min-h-screen bg-white text-slate-950">
-      <Hero />
 <div className="hidden gap-6 text-sm font-medium text-slate-600 md:flex">
   <a href="#about" className="hover:text-violet-600">
     About
