@@ -24,3 +24,56 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1,
+h2,
+h3,
+nav {
+  font-family: var(--font-display), sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.18), transparent 28%),
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.14), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.12), transparent 28%),
+    #020617;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    linear-gradient(115deg, transparent 0%, rgba(34, 211, 238, 0.08) 35%, transparent 55%),
+    radial-gradient(circle at 70% 25%, rgba(34, 211, 238, 0.2), transparent 8%);
+  opacity: 0.6;
+}

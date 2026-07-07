@@ -1,67 +1,96 @@
+import Badge from "./ui/Badge";
+import Card from "./ui/Card";
+import Container from "./ui/Container";
+import Glow from "./ui/Glow";
+import Section from "./ui/Section";
+
+const approach = ["Understand", "Research", "Design", "Build", "Improve"];
+
+const principles = [
+  {
+    title: "Think Like an Engineer",
+    text: "I break complex problems into clear, practical solutions.",
+  },
+  {
+    title: "Build With Purpose",
+    text: "Every project should solve a real problem and create value.",
+  },
+  {
+    title: "Design for People",
+    text: "Technology should be intuitive, accessible, and meaningful.",
+  },
+  {
+    title: "Never Stop Learning",
+    text: "Each project is an opportunity to grow, improve, and adapt.",
+  },
+];
+
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-32">
-      <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-violet-600">
-        About
-      </p>
+    <Section id="about-story" className="py-32">
+      <Glow position="left" />
 
-      <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-        {/* Left Side */}
-        <div>
-          <h2 className="text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
-            Building technology that creates meaningful experiences.
+      <Container>
+        <div className="mb-14 max-w-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
+            About
+          </p>
+
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
+           Technology becomes meaningful when it solves real problems.
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-slate-600">
-            I believe technology is at its best when it solves real problems,
-            empowers people, and creates lasting value for businesses and
-            communities.
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+            I believe great software begins with understanding people before
+            writing code. My background in business, digital marketing, web
+            development, and computer science helps me approach projects with
+            both technical thinking and a clear understanding of user needs.
           </p>
         </div>
 
-        {/* Right Side */}
-        <div className="space-y-7 text-lg leading-8 text-slate-600">
-          <p>
-            Hi, I&apos;m{" "}
-            <span className="font-semibold text-slate-900">
-              Stella (Sopanha) Khim
-            </span>
-            , a Computer Science student passionate about building modern
-            websites, digital products, and user-centered experiences.
+        <div className="mb-10 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl md:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+            My Approach
           </p>
 
-          <p>
-            Originally from Cambodia and now studying in the United States, my
-            journey through UCLA Extension, UIC, and Harry S Truman College has
-            shaped both my technical skills and my perspective. Living and
-            learning in different environments has taught me to approach
-            challenges with curiosity, adaptability, and a commitment to
-            continuous growth.
+          <div className="mt-6 grid gap-4 md:grid-cols-5">
+            {approach.map((step, index) => (
+              <div key={step} className="relative">
+                <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+                  <Badge>0{index + 1}</Badge>
+                  <p className="mt-4 text-lg font-semibold text-white">
+                    {step}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {principles.map((item) => (
+            <Card key={item.title}>
+              <h3 className="text-xl font-bold text-white">{item.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-400">
+                {item.text}
+              </p>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-[2rem] border border-cyan-300/20 bg-cyan-300/[0.04] p-6 backdrop-blur-xl md:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
+            My Story
           </p>
 
-          <p>
-            My interests extend beyond software development. I enjoy combining
-            technology, business strategy, artificial intelligence, digital
-            marketing, and design to create solutions that are not only
-            functional but also intuitive, engaging, and impactful.
-          </p>
-
-          <p>
-            Throughout my projects, I have built e-commerce experiences,
-            business websites, branding systems, AI-assisted workflows, and
-            digital marketing solutions. These experiences have strengthened my
-            ability to bridge technical development with real business
-            objectives.
-          </p>
-
-          <p>
-            Whether I&apos;m developing a website, improving an online shopping
-            experience, or exploring emerging AI technologies, my goal remains
-            the same: to build thoughtful digital products that solve meaningful
-            problems and create lasting value for the people who use them.
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
+            Originally from Cambodia, I built my journey through teaching,
+            business, digital marketing, and computer science. Today, I enjoy
+            creating digital products that combine technology, creativity, and
+            strategy to make a meaningful impact.
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

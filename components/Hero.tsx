@@ -1,89 +1,175 @@
+import PremiumBackground from "./ui/PremiumBackground";
+import Badge from "./ui/Badge";
+import Button from "./ui/Button";
+import Container from "./ui/Container";
+
 export default function Hero() {
+  const stack = [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Shopify",
+    "AI Tools",
+    "SQL",
+    "Digital Marketing",
+  ];
+
   return (
-    <section className="mx-auto grid min-h-screen max-w-6xl items-center gap-14 px-6 py-28 md:grid-cols-[1.15fr_0.85fr]">
-      <div>
-        <p className="mb-5 text-sm font-semibold uppercase tracking-[0.32em] text-violet-600">
-          Stella Khim
-        </p>
+    <section
+      id="about"
+      className="relative flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-32 lg:px-10"
+    >
+      <PremiumBackground variant="hero" />
 
-        <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-slate-950 md:text-7xl">
-          Turning ideas into digital products that create real business value.
-        </h1>
+      <Container>
+        <div className="relative z-10 grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p className="mt-8 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
+              Computer Science • Web Developer • Digital Product Builder
+            </p>
 
-        <p className="mt-4 text-base font-medium text-slate-500">
-          Computer Science Student • Web Developer • AI Solutions • Business Technology
-        </p>
+            <h1 className="mt-8 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">
+              Building digital experiences that connect{" "}
+              <span className="text-cyan-300">technology</span>,{" "}
+              <span className="text-emerald-300">businesses</span>, and{" "}
+              <span className="text-violet-300">people</span>.
+            </h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-          Hi, I&apos;m Stella (Sopanha) Khim, a Computer Science student
-          passionate about building modern websites, e-commerce experiences, and
-          digital products that solve real business challenges. I combine
-          software development, AI, business strategy, and digital marketing to
-          create thoughtful, user-centered solutions that are both functional and
-          visually engaging.
-        </p>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
+              I enjoy transforming ideas into practical digital solutions that
+              people can truly use. By combining{" "}
+              <span className="font-semibold text-cyan-300">
+                software engineering
+              </span>
+              ,{" "}
+              <span className="font-semibold text-sky-300">
+                web development
+              </span>
+              ,{" "}
+              <span className="font-semibold text-violet-300">
+                artificial intelligence
+              </span>
+              , and{" "}
+              <span className="font-semibold text-emerald-300">
+                business strategy
+              </span>
+              , I create technology that solves real-world problems, delivers
+              meaningful user experiences, and creates lasting value.
+            </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#work"
-            className="rounded-full bg-violet-600 px-7 py-3 text-center text-sm font-semibold text-white transition hover:bg-violet-700"
-          >
-            View Work →
-          </a>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href="#work">Explore Projects</Button>
 
-          <a
-            href="/Stella-Khim-Resume.pdf"
-            className="rounded-full border border-slate-300 bg-white/70 px-7 py-3 text-center text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
-          >
-            Resume
-          </a>
+              <Button
+                href="/images/Sopanha-Khim-Resume.pdf"
+                variant="secondary"
+                download
+              >
+                Download Resume
+              </Button>
+            </div>
 
-          <a
-            href="https://github.com/khimsopanha123-blip"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-slate-300 bg-white/70 px-7 py-3 text-center text-sm font-semibold text-slate-800 transition hover:border-violet-600 hover:text-violet-600"
-          >
-            GitHub
-          </a>
+            <div className="mt-10 flex flex-wrap gap-2">
+              {stack.map((item) => (
+                <Badge key={item}>{item}</Badge>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-violet-500/20 blur-xl" />
+
+            <div className="relative rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-2xl backdrop-blur-xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
+                Stella Dashboard
+              </p>
+
+              <h2 className="mt-5 text-3xl font-bold text-white">
+                Digital Product Builder
+              </h2>
+
+              <p className="mt-3 text-sm leading-7 text-slate-400">
+                Focused on web development, AI-assisted workflows, business
+                strategy, and user-centered digital experiences.
+              </p>
+
+              <div className="mt-7 rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+                  Currently Building
+                </p>
+
+                <div className="mt-4 space-y-3 text-sm text-slate-300">
+                  <p>● Centurion Intelligence Website</p>
+                  <p>● Lucky Alanka E-commerce Brand</p>
+                  <p>● Portfolio Version 3.0</p>
+                  <p>● AI-assisted Web Experiences</p>
+                </div>
+              </div>
+
+              <div className="mt-7 rounded-3xl border border-cyan-300/20 bg-slate-950/80 p-5 font-mono text-sm">
+                <p className="text-slate-500">// stella.ts</p>
+
+                <div className="mt-4 space-y-2">
+                  <p>
+                    <span className="text-violet-300">const</span>{" "}
+                    <span className="text-cyan-300">stella</span>{" "}
+                    <span className="text-slate-400">=</span>{" "}
+                    <span className="text-white">{"{"}</span>
+                  </p>
+
+                  <p className="pl-5 text-slate-300">
+                    role:{" "}
+                    <span className="text-cyan-200">
+                      &quot;Web Developer&quot;
+                    </span>
+                    ,
+                  </p>
+
+                  <p className="pl-5 text-slate-300">
+                    focus:{" "}
+                    <span className="text-violet-300">
+                      [&quot;Web&quot;, &quot;AI&quot;, &quot;Business&quot;]
+                    </span>
+                    ,
+                  </p>
+
+                  <p className="pl-5 text-slate-300">
+                    building:{" "}
+                    <span className="text-emerald-300">
+                      &quot;Project STELLA&quot;
+                    </span>
+                    ,
+                  </p>
+
+                  <p className="pl-5 text-slate-300">
+                    location:{" "}
+                    <span className="text-sky-300">&quot;Chicago&quot;</span>,
+                  </p>
+
+                  <p className="text-white">{"}"}</p>
+                </div>
+
+                <div className="mt-5 border-t border-white/10 pt-4 text-emerald-300">
+                  <p>&gt; npm run build</p>
+                  <p className="mt-2">✓ Portfolio compiled</p>
+                  <p>✓ Ready for opportunities</p>
+                </div>
+              </div>
+
+              <div className="mt-7 rounded-3xl border border-cyan-300/20 bg-cyan-300/5 p-5">
+                <p className="text-sm font-semibold text-cyan-200">
+                  Open to OPT opportunities
+                </p>
+                <p className="mt-2 text-sm leading-6 text-slate-400">
+                  Seeking software engineering, web development, and digital
+                  product roles where technology creates real impact.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative rounded-[2rem] border border-slate-200 bg-white/75 p-8 shadow-xl shadow-slate-200/70 backdrop-blur">
-        <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-violet-200/50 blur-3xl" />
-
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-violet-600">
-          At a Glance
-        </p>
-
-        <div className="mt-8 grid gap-6">
-          <div>
-            <p className="text-4xl font-semibold text-slate-950">05+</p>
-            <p className="mt-1 text-slate-600">Professional projects</p>
-          </div>
-
-          <div>
-            <p className="text-4xl font-semibold text-slate-950">07</p>
-            <p className="mt-1 text-slate-600">
-              Google digital marketing certificates
-            </p>
-          </div>
-
-          <div>
-            <p className="text-4xl font-semibold text-slate-950">03+</p>
-            <p className="mt-1 text-slate-600">
-              Shopify • WordPress • Webflow
-            </p>
-          </div>
-
-          <div>
-            <p className="text-4xl font-semibold text-slate-950">AI</p>
-            <p className="mt-1 text-slate-600">
-              Prompt engineering • Automation • Productivity workflows
-            </p>
-          </div>
-        </div>
-      </div>
+      </Container>
     </section>
   );
 }
