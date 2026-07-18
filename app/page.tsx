@@ -1,3 +1,4 @@
+import SiteBackground from "../components/ui/SiteBackground";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
@@ -11,28 +12,31 @@ import Philosophy from "../components/Philosophy";
 import Journey from "../components/Journey";
 import FeaturedImpact from "../components/FeaturedImpact";
 import HowIWork from "../components/HowIWork";
-import Toolbox from "../components/ToolBox";
+import ToolBox from "../components/ToolBox";
 import Footer from "../components/Footer";
-import PremiumBackground from "../components/ui/PremiumBackground";
+
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
-      <PremiumBackground />
-      <Navbar />
-      <Hero />
-      <FeaturedImpact />
-      <About />
-      <HowIWork />
-      <Philosophy />
-      <Journey />
-      <Projects />
-      <CurrentlyBuilding />
-      <Toolbox />
-      <Skills />
-      <Timeline />
-      <Certifications />
-      <Contact />
-      <Footer />
+    <main className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
+      <SiteBackground />
+
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <FeaturedImpact />
+        <About />
+        <HowIWork />
+        <Philosophy />
+        <Journey />
+        <Projects />
+        <CurrentlyBuilding />
+        <ToolBox />
+        <Skills />
+        <Timeline />
+        <Certifications />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 }

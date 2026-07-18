@@ -1,3 +1,4 @@
+import PremiumBackground from "./ui/PremiumBackground";
 import Image from "next/image";
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
@@ -5,7 +6,6 @@ import Card from "./ui/Card";
 import Container from "./ui/Container";
 import Glow from "./ui/Glow";
 import Section from "./ui/Section";
-import PremiumBackground from "./ui/PremiumBackground";
 
 const featuredProjects = [
   {
@@ -104,7 +104,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Section id="work" className="py-32">
+  <Section id="work" className="relative overflow-hidden py-32">
+    <PremiumBackground variant="projects" />
       <Glow position="right" />
 
       <Container>
