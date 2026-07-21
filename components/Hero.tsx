@@ -4,6 +4,7 @@ import Badge from "./ui/Badge";
 import Button from "./ui/Button";
 import Container from "./ui/Container";
 
+
 export default function Hero() {
   const stack = [
     "Next.js",
@@ -21,8 +22,7 @@ export default function Hero() {
       id="about"
       className="relative flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-32 lg:px-10"
     >
-
-      <Container>
+<Container>
         <div className="relative z-10 grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="mt-8 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
