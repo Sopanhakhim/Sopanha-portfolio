@@ -2,41 +2,48 @@ import Container from "./ui/Container";
 import Glow from "./ui/Glow";
 import Section from "./ui/Section";
 
-const influences = [
+const educationJourney = [
   {
     number: "01",
-    label: "Education",
-    title: "Learning how to think, communicate, and keep growing",
-    text: "My academic journey taught me to stay curious, adapt to new environments, and approach unfamiliar challenges with patience and discipline.",
-    takeaway: "Curiosity",
+    label: "2018 · Cambodia",
+    title: "Prek Eng High School",
+    text: "Completed my secondary education with a science-focused foundation that strengthened my analytical thinking, curiosity, and approach to problem-solving.",
+    takeaway: "Science",
   },
   {
     number: "02",
-    label: "Teaching & Service",
-    title: "Understanding people before offering solutions",
-    text: "Teaching and customer-facing work strengthened my ability to listen, explain ideas clearly, recognize different needs, and build trust through communication.",
-    takeaway: "Empathy",
+    label: "2019 — 2020 · Cambodia",
+    title: "Royal University of Phnom Penh",
+    text: "Began my university studies in Chemistry, developing a stronger foundation in scientific reasoning, observation, attention to detail, and structured analysis.",
+    takeaway: "Chemistry",
   },
   {
     number: "03",
-    label: "Business & Marketing",
-    title: "Connecting creative work with real goals",
-    text: "Business and digital marketing taught me that strong ideas must also communicate value, support customers, and contribute to measurable outcomes.",
-    takeaway: "Strategy",
+    label: "2020 — 2023 · Cambodia",
+    title: "Paññāsāstra University of Cambodia",
+    text: "Studied Teaching English to Speakers of Other Languages, strengthening my communication, presentation, collaboration, and teaching skills while also gaining early professional experience in education, sales, and digital marketing.",
+    takeaway: "TESOL",
   },
   {
     number: "04",
-    label: "Computer Science",
-    title: "Turning complex problems into structured systems",
-    text: "Computer science developed my technical thinking and taught me how to break larger challenges into smaller, logical, and practical steps.",
-    takeaway: "Problem Solving",
+    label: "2023 — 2024 · Los Angeles",
+    title: "UCLA Extension",
+    text: "Expanded my business and digital foundation through coursework in Fundamentals of Business, Digital Marketing, and Writing for Public Relations, helping me better understand customers, communication, branding, and digital strategy.",
+    takeaway: "Business & Marketing",
   },
   {
     number: "05",
-    label: "Building Products",
-    title: "Bringing people, technology, and business together",
-    text: "Working on websites, e-commerce experiences, client projects, and digital workflows showed me how thoughtful execution can turn an idea into something useful.",
-    takeaway: "Value Creation",
+    label: "2024 — 2025 · Chicago",
+    title: "University of Illinois Chicago",
+    text: "Continued developing academic English and professional communication through the Tutorium in Intensive English while adapting to a new academic environment and building confidence in a professional setting.",
+    takeaway: "Communication",
+  },
+  {
+    number: "06",
+    label: "2025 — Present · Chicago",
+    title: "Harry S. Truman College",
+    text: "Currently pursuing an Associate in Science in Computer Science while building practical experience through web development, client projects, digital products, and independent technical learning.",
+    takeaway: "Computer Science",
   },
 ];
 
@@ -52,32 +59,49 @@ export default function Journey() {
       <div className="pointer-events-none absolute bottom-10 right-[-10rem] h-[26rem] w-[26rem] rounded-full bg-violet-500/10 blur-[140px]" />
 
       <Container>
+        {/* Section Heading */}
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
-            What Shaped Me
+            My Education Journey
           </p>
 
           <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl">
-            Different experiences shaped the way I think, build, and contribute.
+            From Cambodia to the United States.
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-400 md:text-lg">
-            My perspective comes from more than one field. Education, service,
-            business, marketing, and computer science each strengthened a
-            different part of how I approach digital work today.
+            My academic journey has taken me across countries and disciplines —
+            from science and language studies in Cambodia to business,
+            communication, and Computer Science in the United States. Each
+            stage has shaped the way I think, adapt, communicate, and build
+            today.
           </p>
         </div>
 
+        {/* Country Transition */}
+        <div className="mx-auto mt-12 flex max-w-2xl items-center justify-center gap-4 text-center">
+          <div className="rounded-full border border-white/10 bg-white/[0.035] px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
+            Cambodia
+          </div>
+
+          <div className="h-px flex-1 bg-gradient-to-r from-cyan-300/50 via-white/20 to-violet-300/50" />
+
+          <div className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.06] px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+            United States
+          </div>
+        </div>
+
+        {/* Timeline */}
         <div className="relative mt-16 md:mt-20">
           <div className="pointer-events-none absolute bottom-10 left-6 top-10 hidden w-px bg-gradient-to-b from-cyan-300/70 via-white/10 to-violet-300/50 md:block md:left-1/2 md:-translate-x-1/2" />
 
           <div className="space-y-7 md:space-y-10">
-            {influences.map((item, index) => {
+            {educationJourney.map((item, index) => {
               const isEven = index % 2 === 0;
 
               return (
                 <div
-                  key={item.label}
+                  key={`${item.title}-${item.label}`}
                   className="relative grid items-center gap-6 md:grid-cols-[1fr_5rem_1fr]"
                 >
                   <div
@@ -118,12 +142,14 @@ export default function Journey() {
                     </div>
                   </div>
 
+                  {/* Desktop Timeline Number */}
                   <div className="relative z-10 hidden items-center justify-center md:col-start-2 md:flex">
                     <div className="flex h-16 w-16 items-center justify-center rounded-full border border-cyan-300/30 bg-slate-950 text-sm font-bold text-cyan-200 shadow-[0_0_28px_rgba(34,211,238,0.14)]">
                       {item.number}
                     </div>
                   </div>
 
+                  {/* Mobile Timeline Number */}
                   <div className="absolute left-0 top-7 flex h-12 w-12 items-center justify-center rounded-full border border-cyan-300/25 bg-slate-950 text-xs font-bold text-cyan-200 shadow-[0_0_20px_rgba(34,211,238,0.12)] md:hidden">
                     {item.number}
                   </div>
@@ -137,16 +163,29 @@ export default function Journey() {
           </div>
         </div>
 
+        {/* Closing Summary */}
         <div className="mx-auto mt-16 max-w-4xl overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.06] via-white/[0.025] to-violet-300/[0.05] p-7 text-center backdrop-blur-xl md:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
-            The Result
+            Where It Led Me
           </p>
 
           <p className="mt-5 text-2xl font-bold leading-tight text-white md:text-3xl">
-            I approach technology with the mindset of a developer, the
-            perspective of a business thinker, and the empathy of someone who
-            understands people.
+            Science taught me to analyze. Teaching taught me to communicate.
+            Business taught me to understand value. Computer Science brought
+            those experiences together through technology.
           </p>
+
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-400 md:text-base">
+            Today, I use that multidisciplinary perspective to build digital
+            experiences that consider technology, people, and business
+            together.
+          </p>
+
+          <div className="mt-8 inline-flex items-center rounded-full border border-cyan-300/20 bg-cyan-300/[0.06] px-5 py-2.5">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+              Current Focus · Computer Science · Chicago
+            </span>
+          </div>
         </div>
       </Container>
     </Section>
