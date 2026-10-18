@@ -1,9 +1,8 @@
+
 import Image from "next/image";
-import PremiumBackground from "./ui/PremiumBackground";
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
 import Container from "./ui/Container";
-
 
 export default function Hero() {
   const stack = [
@@ -20,10 +19,12 @@ export default function Hero() {
   return (
     <section
       id="about"
-      className="relative flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-32 lg:px-10"
+      className="relative flex min-h-screen items-center px-6 pb-24 pt-32 lg:px-10"
     >
-<Container>
-        <div className="relative z-10 grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+      <Container>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+
+          {/* LEFT SIDE - ORIGINAL INTRODUCTION */}
           <div>
             <p className="mt-8 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
               Computer Science • Web Development • AI • Business Strategy
@@ -43,16 +44,13 @@ export default function Hero() {
               for growth. Today, I combine{" "}
               <span className="font-semibold text-cyan-300">
                 computer science
-              </span>
-              ,{" "}
+              </span>,{" "}
               <span className="font-semibold text-sky-300">
                 web development
-              </span>
-              ,{" "}
+              </span>,{" "}
               <span className="font-semibold text-violet-300">
                 artificial intelligence
-              </span>
-              , and{" "}
+              </span>, and{" "}
               <span className="font-semibold text-emerald-300">
                 business strategy
               </span>{" "}
@@ -60,8 +58,11 @@ export default function Hero() {
               experiences, support business goals, and create lasting value.
             </p>
 
+            {/* BUTTONS */}
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button href="#work">Explore Projects</Button>
+              <Button href="#work">
+                Explore Projects
+              </Button>
 
               <Button
                 href="/images/Sopanha-Khim-Resume.pdf"
@@ -72,6 +73,7 @@ export default function Hero() {
               </Button>
             </div>
 
+            {/* SKILLS */}
             <div className="mt-10 flex flex-wrap gap-2">
               {stack.map((item) => (
                 <Badge key={item}>{item}</Badge>
@@ -79,127 +81,103 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-violet-500/20 blur-xl" />
+          {/* RIGHT SIDE - ONE PHOTO + CODE */}
+          <div className="relative mx-auto w-full max-w-lg">
 
-            <div className="relative rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-2xl backdrop-blur-xl">
-              <div className="mb-7 flex items-center gap-4 rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.04] p-4 shadow-lg shadow-cyan-500/10">
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-cyan-300/30 bg-slate-900">
-                  <Image
-                    src="/images/profile.jpg"
-                    alt="Sopanha Khim"
-                    fill
-                    sizes="80px"
-                    priority
-                    className="object-cover"
-                  />
-                </div>
+            {/* BACKGROUND GLOW */}
+            <div className="pointer-events-none absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-violet-500/20 blur-2xl" />
 
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
-                    Meet Stella
-                  </p>
+            <div className="relative rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl backdrop-blur-xl sm:p-7">
 
-                  <h2 className="mt-2 text-xl font-bold text-white">
-                    Sopanha Khim
-                  </h2>
-
-                  <p className="mt-1 text-sm text-slate-400">
-                    Web Development • Digital Products • AI
-                  </p>
-                </div>
+              {/* ONLY ONE PROFILE PHOTO */}
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[400px] overflow-hidden rounded-[1.75rem] border border-cyan-300/20 bg-slate-900 shadow-xl shadow-cyan-500/10">
+                <Image
+                  src="/images/stella image.jpg"
+                  alt="Sopanha Khim"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 90vw, 400px"
+                  className="object-cover object-[center_25%]"
+                />
               </div>
 
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
-                Stella Dashboard
-              </p>
+              {/* CODE TERMINAL */}
+              <div className="mt-7 overflow-hidden rounded-2xl border border-cyan-300/20 bg-slate-950 shadow-lg">
 
-              <h2 className="mt-5 text-3xl font-bold text-white">
-                Digital Product Builder
-              </h2>
+                {/* TERMINAL HEADER */}
+                <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.03] px-5 py-3">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                  </div>
 
-              <p className="mt-3 text-sm leading-7 text-slate-400">
-                Focused on building practical websites, AI-assisted workflows,
-                and user-centered digital experiences that support real business
-                needs.
-              </p>
-
-              <div className="mt-7 rounded-3xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-                  Currently Building
-                </p>
-
-                <div className="mt-4 space-y-3 text-sm text-slate-300">
-                  <p>● Centurion Intelligence Website</p>
-                  <p>● Lucky Alanka E-commerce Brand</p>
-                  <p>● Portfolio Version 3.0</p>
-                  <p>● AI-assisted Web Experiences</p>
+                  <span className="font-mono text-xs text-slate-500">
+                    sopanha.ts
+                  </span>
                 </div>
-              </div>
 
-              <div className="mt-7 rounded-3xl border border-cyan-300/20 bg-slate-950/80 p-5 font-mono text-sm">
-                <p className="text-slate-500">// stella.ts</p>
+                {/* CODE CONTENT */}
+                <div className="space-y-3 p-5 font-mono text-xs leading-6 sm:text-sm">
 
-                <div className="mt-4 space-y-2">
                   <p>
                     <span className="text-violet-300">const</span>{" "}
-                    <span className="text-cyan-300">stella</span>{" "}
+                    <span className="text-cyan-300">sopanha</span>{" "}
                     <span className="text-slate-400">=</span>{" "}
                     <span className="text-white">{"{"}</span>
                   </p>
 
-                  <p className="pl-5 text-slate-300">
+                  <p className="pl-4 text-slate-300">
                     path:{" "}
                     <span className="text-cyan-200">
                       &quot;Computer Science&quot;
-                    </span>
-                    ,
+                    </span>,
                   </p>
 
-                  <p className="pl-5 text-slate-300">
+                  <p className="pl-4 text-slate-300">
                     focus:{" "}
                     <span className="text-violet-300">
-                      [&quot;Web&quot;, &quot;AI&quot;, &quot;Business&quot;]
-                    </span>
-                    ,
+                      [&quot;Web&quot;, &quot;Design&quot;, &quot;Business&quot;]
+                    </span>,
                   </p>
 
-                  <p className="pl-5 text-slate-300">
+                  <p className="pl-4 text-slate-300">
                     mindset:{" "}
                     <span className="text-emerald-300">
                       &quot;Learn, adapt, create value&quot;
-                    </span>
-                    ,
+                    </span>,
                   </p>
 
-                  <p className="pl-5 text-slate-300">
+                  <p className="pl-4 text-slate-300">
                     location:{" "}
-                    <span className="text-sky-300">&quot;Chicago&quot;</span>,
+                    <span className="text-sky-300">
+                      &quot;Chicago&quot;
+                    </span>
                   </p>
 
                   <p className="text-white">{"}"}</p>
-                </div>
 
-                <div className="mt-5 border-t border-white/10 pt-4 text-emerald-300">
-                  <p>&gt; npm run build</p>
-                  <p className="mt-2">✓ Portfolio compiled</p>
-                  <p>✓ Ready for opportunities</p>
+                  <div className="mt-5 border-t border-white/10 pt-4">
+                    <p className="text-slate-400">
+                      <span className="text-emerald-300">$</span>{" "}
+                      npm run build
+                    </p>
+
+                    <p className="mt-2 text-emerald-300">
+                      ✓ Portfolio compiled
+                    </p>
+
+                    <p className="text-emerald-300">
+                      ✓ Always learning, always building
+                    </p>
+                  </div>
+
                 </div>
               </div>
 
-              <div className="mt-7 rounded-3xl border border-cyan-300/20 bg-cyan-300/5 p-5">
-                <p className="text-sm font-semibold text-cyan-200">
-                  Open to Growth Opportunities
-                </p>
-
-                <p className="mt-2 text-sm leading-6 text-slate-400">
-                  Seeking opportunities in web development, digital products,
-                  AI-assisted workflows, and technology roles where I can keep
-                  learning, contribute value, and support real business needs.
-                </p>
-              </div>
             </div>
           </div>
+
         </div>
       </Container>
     </section>

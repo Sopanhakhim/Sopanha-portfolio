@@ -1,116 +1,243 @@
+
 import Button from "./ui/Button";
-import Card from "./ui/Card";
 import Container from "./ui/Container";
-import Glow from "./ui/Glow";
 import Section from "./ui/Section";
 
 export default function Contact() {
   return (
     <Section
       id="contact"
-      className="relative overflow-hidden pb-36 pt-20 md:pt-28"
+      className="relative scroll-mt-28 overflow-hidden py-24 md:py-32"
     >
-      <Glow position="center" />
+      {/* BACKGROUND COLOR EFFECTS */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" />
 
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/5 blur-[120px]" />
+        <div className="absolute -right-24 top-20 h-96 w-96 rounded-full bg-violet-500/15 blur-[130px]" />
 
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-72 w-72 rounded-full bg-violet-500/[0.06] blur-[110px]" />
+        <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-blue-500/10 blur-[110px]" />
+      </div>
 
+      {/* TOP GRADIENT LINE */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-violet-400/40" />
+
+      {/* MAIN CONTAINER */}
       <Container>
-        <Card>
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            {/* Left side */}
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
-                Let&apos;s Connect
-              </p>
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
 
-              <h2 className="mt-5 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-                Let&apos;s build{" "}
-                <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-violet-300 bg-clip-text text-transparent">
-                  technology that makes an impact
-                </span>
-                .
-              </h2>
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/65 p-7 shadow-2xl backdrop-blur-xl md:p-12">
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-400">
-                I&apos;m passionate about building websites and digital products
-                that combine clean design, modern technology, business
-                awareness, and thoughtful problem-solving. Whether you&apos;re
-                looking for a developer, collaborator, or someone eager to learn
-                and contribute, I&apos;d love to connect.
-              </p>
+            {/* SOFT INNER GLOW */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-400/[0.05] via-transparent to-violet-400/[0.07]" />
 
-              <div className="mt-8 space-y-4 rounded-[1.5rem] border border-white/10 bg-slate-900/60 p-6">
-                <div className="flex items-start gap-3">
-                  <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(74,222,128,0.65)]" />
+            <div className="relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
 
-                  <p className="text-sm font-medium leading-6 text-slate-300">
-                    Available for internships, entry-level positions, freelance
-                    projects, and collaborative opportunities.
+              {/* LEFT SIDE - INTRODUCTION */}
+              <div>
+
+                <div className="mb-6 flex items-center gap-3">
+                  <span className="h-px w-10 bg-gradient-to-r from-cyan-400 to-violet-400" />
+
+                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                    Let&apos;s Connect
                   </p>
                 </div>
 
-                <div className="h-px bg-gradient-to-r from-cyan-300/15 via-white/10 to-transparent" />
+                <h2 className="font-[Sora] text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
 
-                <p className="text-sm leading-7 text-slate-400">
-                  <span className="font-semibold text-white">
-                    Chicago, Illinois
+                  Have something{" "}
+                  <span className="text-cyan-300">
+                    in mind?
                   </span>
-                  <br />
-                  Open to Software Engineering, Front-End Development, Web
-                  Development, Website Coordination, Digital Product, and
-                  Marketing Technology roles.
+
+                  <span className="mt-3 block">
+                    Let&apos;s{" "}
+                    <span className="text-violet-300">
+                      talk.
+                    </span>
+                  </span>
+
+                </h2>
+
+                <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+                  I enjoy connecting with people who
+                  are working on interesting ideas,
+                  websites, and digital projects.
                 </p>
-              </div>
-            </div>
 
-            {/* Right side */}
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 md:p-8">
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-300/[0.03] via-transparent to-violet-300/[0.025]" />
+                <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
+                  Whether you have a project in mind,
+                  would like to collaborate, or simply
+                  want to connect, I&apos;d be happy
+                  to hear from you.
+                </p>
 
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/35 to-transparent" />
+                <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400">
+                  I&apos;m always interested in
+                  opportunities where I can use my
+                  website, design, and technical skills
+                  while continuing to learn.
+                </p>
 
-              <div className="relative flex flex-col gap-4">
-                <Button href="mailto:khimsopanha123@gmail.com?subject=Portfolio%20Inquiry">
-                  Get in Touch
-                </Button>
+                {/* AVAILABILITY CARD */}
+                <div className="mt-9 rounded-[1.5rem] border border-cyan-300/15 bg-cyan-300/[0.04] p-6">
 
-                <Button
-                  href="/images/Sopanha-Khim-Resume.pdf"
-                  variant="secondary"
-                  download
-                >
-                  Download Resume
-                </Button>
+                  <div className="flex items-start gap-4">
 
-                <Button
-                  href="https://www.linkedin.com/in/khim-sopanha-71a41a3a5/"
-                  variant="secondary"
-                >
-                  LinkedIn
-                </Button>
+                    <span className="relative mt-2 flex h-3 w-3 shrink-0">
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400/40 motion-safe:animate-ping" />
 
-                <Button
-                  href="https://github.com/Sopanhakhim/Sopanhakhim"
-                  variant="secondary"
-                >
-                  GitHub
-                </Button>
+                      <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
+                    </span>
 
-                <div className="mt-2 border-t border-white/10 pt-6 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-                    Response Time
-                  </p>
+                    <div>
+                      <p className="text-sm font-semibold text-cyan-200">
+                        Open to Opportunities
+                      </p>
 
-                  <p className="mt-2 text-sm text-slate-300">
-                    Usually within 24 hours
-                  </p>
+                      <p className="mt-3 text-sm leading-7 text-slate-300">
+                        I&apos;m interested in website
+                        coordination, web content,
+                        IT support, web development,
+                        and digital projects.
+                      </p>
+
+                      <p className="mt-3 text-sm leading-7 text-slate-400">
+                        Anticipated employment availability:
+                        January 2027, pending OPT
+                        authorization.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* LOCATION */}
+                <div className="mt-7 flex flex-wrap items-center gap-3">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-5 w-5 text-violet-300"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20 10C20 15 12 22 12 22S4 15 4 10A8 8 0 0120 10Z"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+
+                    <circle
+                      cx="12"
+                      cy="10"
+                      r="2.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+
+                  <span className="text-sm text-slate-400">
+                    Based in Chicago, Illinois
+                  </span>
                 </div>
               </div>
+
+              {/* RIGHT SIDE - CONTACT CARD */}
+              <div className="relative">
+
+                {/* BACKGROUND GLOW */}
+                <div className="pointer-events-none absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-cyan-400/15 via-blue-500/10 to-violet-500/15 blur-2xl" />
+
+                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/75 p-6 shadow-xl backdrop-blur-xl sm:p-8">
+
+                  {/* COLORFUL TOP BORDER */}
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400" />
+
+                  {/* CARD HEADER */}
+                  <div className="mb-8">
+
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-300">
+                      Get in Touch
+                    </p>
+
+                    <h3 className="mt-4 font-[Sora] text-2xl font-bold text-white">
+                      Say hello!
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-7 text-slate-400">
+                      Feel free to reach out through
+                      email or connect with me online.
+                    </p>
+                  </div>
+
+                  {/* CONTACT BUTTONS */}
+                  <div className="flex flex-col gap-4">
+
+                    {/* EMAIL */}
+                    <Button
+                      href="mailto:stellakhim3@gmail.com?subject=Portfolio%20Inquiry"
+                    >
+                      Email Me ↗
+                    </Button>
+
+                    {/* LINKEDIN */}
+                    <Button
+                      href="https://www.linkedin.com/in/khim-sopanha-71a41a3a5/"
+                      variant="secondary"
+                    >
+                      LinkedIn ↗
+                    </Button>
+
+                    {/* GITHUB */}
+                    <Button
+                      href="https://github.com/Sopanhakhim/Sopanhakhim"
+                      variant="secondary"
+                    >
+                      GitHub ↗
+                    </Button>
+
+                    {/* RESUME */}
+                    <Button
+                      href="/images/Sopanha-Khim-Resume.pdf"
+                      variant="secondary"
+                      download
+                    >
+                      Download Résumé ↓
+                    </Button>
+
+                  </div>
+
+                  {/* EMAIL DISPLAY */}
+                  <div className="mt-8 border-t border-white/10 pt-7">
+
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                      Email Address
+                    </p>
+
+                    <a
+                      href="mailto:stellakhim3@gmail.com"
+                      className="mt-3 inline-block break-all text-sm font-medium text-cyan-300 transition-colors duration-300 hover:text-violet-300"
+                    >
+                      stellakhim3@gmail.com
+                    </a>
+
+                  </div>
+
+                  {/* CLOSING NOTE */}
+                  <div className="mt-7 rounded-xl border border-violet-300/15 bg-violet-300/[0.04] p-4">
+
+                    <p className="text-center text-sm leading-7 text-slate-300">
+                      Looking forward to connecting
+                      and hearing about your ideas!
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
-        </Card>
+        </div>
       </Container>
     </Section>
   );

@@ -3,7 +3,7 @@ import Container from "./ui/Container";
 const footerLinks = [
   {
     label: "Email",
-    href: "mailto:khimsopanha123@gmail.com?subject=Portfolio%20Inquiry",
+    href: "mailto:stellakhim3@gmail.com?subject=Portfolio%20Inquiry",
   },
   {
     label: "LinkedIn",
