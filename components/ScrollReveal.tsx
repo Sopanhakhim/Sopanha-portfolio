@@ -21,12 +21,8 @@ export default function ScrollReveal({
     const element = ref.current;
     if (!element) return;
 
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
     if (
-      reducedMotion ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
       !("IntersectionObserver" in window) ||
       typeof element.animate !== "function"
     ) {
@@ -43,17 +39,11 @@ export default function ScrollReveal({
 
         animation = element.animate(
           [
-            {
-              opacity: 0,
-              transform: "translateY(60px)",
-            },
-            {
-              opacity: 1,
-              transform: "translateY(0)",
-            },
+            { opacity: 0, transform: "translateY(40px)" },
+            { opacity: 1, transform: "translateY(0)" },
           ],
           {
-            duration: 1300,
+            duration: 900,
             delay: delay * 1000,
             easing: "cubic-bezier(0.22, 1, 0.36, 1)",
             fill: "both",
@@ -62,7 +52,7 @@ export default function ScrollReveal({
       },
       {
         threshold: 0,
-        rootMargin: "0px 0px -20% 0px",
+        rootMargin: "0px 0px -10% 0px",
       }
     );
 
@@ -75,10 +65,7 @@ export default function ScrollReveal({
   }, [delay]);
 
   return (
-    <div
-      ref={ref}
-      className={`relative w-full min-w-0 ${className}`}
-    >
+    <div ref={ref} className={`min-w-0 ${className}`}>
       {children}
     </div>
   );

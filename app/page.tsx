@@ -1,13 +1,12 @@
 
 import SiteBackground from "../components/ui/SiteBackground";
 import InteractiveLines from "../components/ui/InteractiveLines";
-import ScrollReveal from "../components/ScrollReveal";
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Journey from "../components/Journey";
 import Projects from "../components/Projects";
+import Journey from "../components/Journey";
 import Skills from "../components/Skills";
 import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
@@ -17,72 +16,38 @@ export default function Home() {
   return (
     <main
       id="top"
-      className="
-        relative isolate
-        min-h-screen
-        w-full
-        overflow-x-clip
-        bg-slate-950
-        text-white
-      "
+      className="relative isolate min-h-screen w-full overflow-x-clip bg-slate-950 text-white"
     >
       {/* BACKGROUND EFFECTS */}
       <SiteBackground />
-
-      {/* MOUSE-FOLLOWING BUBBLE */}
-      {/* Hidden on touch devices by InteractiveLines */}
       <InteractiveLines />
 
-      {/* RESPONSIVE STICKY NAVIGATION */}
+      {/* STICKY NAVIGATION */}
       <div className="sticky top-0 z-50 w-full">
         <Navbar />
       </div>
 
-      {/* MAIN CONTENT */}
+      {/* MAIN WEBSITE CONTENT */}
       <div className="relative z-10 w-full min-w-0">
+        <Hero />
 
-        {/* HERO */}
-        <ScrollReveal>
-          <Hero />
-        </ScrollReveal>
+        <About />
 
-        {/* ABOUT */}
-        <ScrollReveal>
-          <About />
-        </ScrollReveal>
-
-        {/* EDUCATION */}
-        <ScrollReveal>
-          <Journey />
-        </ScrollReveal>
-
-        {/* PROJECTS AND EXPERIENCE */}
+        {/* PROJECTS / EXPERIENCE */}
         <div id="experience">
-          <ScrollReveal>
-            <Projects />
-          </ScrollReveal>
+          <Projects />
         </div>
 
-        {/* SKILLS */}
-        <ScrollReveal>
-          <Skills />
-        </ScrollReveal>
+        {/* EDUCATION JOURNEY */}
+        <Journey />
 
-        {/* CERTIFICATIONS */}
-        <ScrollReveal>
-          <Certifications />
-        </ScrollReveal>
+        <Skills />
 
-        {/* CONTACT */}
-        <ScrollReveal>
-          <Contact />
-        </ScrollReveal>
+        <Certifications />
 
-        {/* FOOTER */}
-        <ScrollReveal>
-          <Footer />
-        </ScrollReveal>
+        <Contact />
 
+        <Footer />
       </div>
     </main>
   );

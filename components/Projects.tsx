@@ -1,4 +1,6 @@
 
+import ScrollReveal from "./ScrollReveal";
+
 type Project = {
   name: string;
   role: string;
@@ -158,164 +160,183 @@ export default function Projects() {
         <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-blue-500/10 blur-[110px]" />
       </div>
 
-      {/* CENTERED CONTENT CONTAINER */}
       <div className="relative z-10 mx-auto w-full max-w-7xl">
-
         {/* SECTION HEADING */}
         <div className="mb-14 max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
-            Selected Work
-          </p>
+          <ScrollReveal>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
+              Selected Work
+            </p>
+          </ScrollReveal>
 
-          <h2 className="mt-5 font-[Sora] text-4xl font-bold tracking-tight text-white md:text-5xl">
-            Projects I&apos;ve{" "}
-            <span className="text-cyan-300">
-              worked on.
-            </span>
-          </h2>
+          <ScrollReveal delay={0.06}>
+            <h2 className="mt-5 font-[Sora] text-4xl font-bold tracking-tight text-white md:text-5xl">
+              Projects I&apos;ve{" "}
+              <span className="text-cyan-300">
+                worked on.
+              </span>
+            </h2>
+          </ScrollReveal>
 
-          <p className="mt-6 text-base leading-8 text-slate-300 md:text-lg">
-            These are some of the websites and digital projects
-            I&apos;ve helped build and maintain. They include
-            my paid work at Truman Middle College and volunteer
-            projects with businesses and organizations in
-            different fields.
-          </p>
+          <ScrollReveal delay={0.1}>
+            <p className="mt-6 text-base leading-8 text-slate-300 md:text-lg">
+              These are some of the websites and digital projects
+              I&apos;ve helped build and maintain. They include
+              my paid work at Truman Middle College and volunteer
+              projects with businesses and organizations in
+              different fields.
+            </p>
+          </ScrollReveal>
 
-          <p className="mt-4 text-sm leading-7 text-slate-400">
-            Each one has given me a chance to work with
-            different people, learn new tools, and put my
-            skills to use.
-          </p>
+          <ScrollReveal delay={0.14}>
+            <p className="mt-4 text-sm leading-7 text-slate-400">
+              Each one has given me a chance to work with
+              different people, learn new tools, and put my
+              skills to use.
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* PROJECT CARDS */}
-        <div className="grid grid-cols-1 gap-7 lg:grid-cols-2 lg:gap-8">
-          {projects.map((project) => {
+        <div className="grid grid-cols-1 items-stretch gap-7 lg:grid-cols-2 lg:gap-8">
+          {projects.map((project, index) => {
             const theme = themes[project.color];
 
             return (
-              <article
+              <ScrollReveal
                 key={project.name}
-                className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/70 shadow-xl backdrop-blur-xl transition-all duration-300 motion-safe:hover:-translate-y-1.5 ${theme.border}`}
+                className="h-full"
+                delay={index % 2 === 0 ? 0 : 0.08}
               >
-                {/* COLORFUL CARD GLOW */}
-                <div
-                  className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${theme.gradient} opacity-60 transition-opacity duration-300 group-hover:opacity-100`}
-                />
+                <article
+                  className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/70 shadow-xl backdrop-blur-xl transition-[border-color,box-shadow] duration-300 ${theme.border}`}
+                >
+                  {/* CARD GLOW */}
+                  <div
+                    className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${theme.gradient} opacity-60 transition-opacity duration-300 group-hover:opacity-100`}
+                  />
 
-                <div className="relative flex h-full flex-col">
+                  <div className="relative flex h-full flex-col">
+                    {/* BROWSER HEADER */}
+                    <div className="flex items-center gap-3 border-b border-white/10 bg-slate-900/70 px-5 py-4">
+                      <div className="flex shrink-0 items-center gap-1.5">
+                        <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                      </div>
 
-                  {/* BROWSER WINDOW HEADER */}
-                  <div className="flex items-center gap-3 border-b border-white/10 bg-slate-900/70 px-5 py-4">
-
-                    <div className="flex shrink-0 items-center gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                      <div className="min-w-0 flex-1 rounded-lg border border-white/10 bg-slate-950/80 px-3 py-2">
+                        <p className="truncate font-mono text-xs text-slate-400">
+                          {project.address}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="min-w-0 flex-1 rounded-lg border border-white/10 bg-slate-950/80 px-3 py-2">
-                      <p className="truncate font-mono text-xs text-slate-400">
-                        {project.address}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* PROJECT INFORMATION */}
-                  <div className="flex flex-1 flex-col p-6 md:p-8">
-
-                    {/* CATEGORY AND PLATFORM */}
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span
-                        className={`rounded-full border border-white/10 ${theme.background} px-3 py-1.5 text-xs font-semibold ${theme.text}`}
-                      >
-                        {project.category}
-                      </span>
-
-                      <span className="text-xs font-medium text-slate-400">
-                        {project.platform}
-                      </span>
-                    </div>
-
-                    {/* PROJECT NAME */}
-                    <h3 className="mt-7 font-[Sora] text-2xl font-bold tracking-tight text-white md:text-3xl">
-                      {project.name}
-                    </h3>
-
-                    {/* YOUR ROLE */}
-                    <p className={`mt-3 text-sm font-semibold ${theme.text}`}>
-                      {project.role}
-                    </p>
-
-                    {/* DESCRIPTION */}
-                    <p className="mt-6 text-base leading-8 text-slate-300">
-                      {project.description}
-                    </p>
-
-                    {/* CONTRIBUTION */}
-                    <div className="mt-7 border-l-2 border-white/15 pl-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.17em] text-slate-400">
-                        My Contribution
-                      </p>
-
-                      <p className="mt-3 text-sm leading-7 text-slate-200">
-                        {project.contribution}
-                      </p>
-                    </div>
-
-                    {/* TOOLS */}
-                    <div className="mt-7 flex flex-wrap gap-2">
-                      {project.tools.map((tool) => (
-                        <span
-                          key={tool}
-                          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-300"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* WEBSITE LINK */}
-                    <div className="mt-auto pt-9">
-                      {project.url ? (
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Visit ${project.name} website (opens in a new tab)`}
-                          className={`inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 ${theme.border}`}
-                        >
-                          Visit Live Website
-
+                    {/* CARD CONTENT */}
+                    <div className="flex flex-1 flex-col p-6 md:p-8">
+                      <ScrollReveal>
+                        <div className="flex flex-wrap items-center gap-3">
                           <span
-                            aria-hidden="true"
-                            className={theme.text}
+                            className={`rounded-full border border-white/10 ${theme.background} px-3 py-1.5 text-xs font-semibold ${theme.text}`}
                           >
-                            ↗
+                            {project.category}
                           </span>
-                        </a>
-                      ) : (
-                        <div className="inline-flex items-center gap-3 rounded-xl border border-amber-300/20 bg-amber-300/[0.05] px-4 py-3 text-sm text-amber-200">
-                          <span className="h-2 w-2 rounded-full bg-amber-300" />
-                          Webflow Project In Progress
+
+                          <span className="text-xs font-medium text-slate-400">
+                            {project.platform}
+                          </span>
                         </div>
-                      )}
+                      </ScrollReveal>
+
+                      <ScrollReveal delay={0.05}>
+                        <h3 className="mt-7 font-[Sora] text-2xl font-bold tracking-tight text-white md:text-3xl">
+                          {project.name}
+                        </h3>
+                      </ScrollReveal>
+
+                      <ScrollReveal delay={0.08}>
+                        <p className={`mt-3 text-sm font-semibold ${theme.text}`}>
+                          {project.role}
+                        </p>
+                      </ScrollReveal>
+
+                      <ScrollReveal delay={0.1}>
+                        <p className="mt-6 text-base leading-8 text-slate-300">
+                          {project.description}
+                        </p>
+                      </ScrollReveal>
+
+                      <ScrollReveal delay={0.12}>
+                        <div className="mt-7 border-l-2 border-white/15 pl-4">
+                          <p className="text-xs font-semibold uppercase tracking-[0.17em] text-slate-400">
+                            My Contribution
+                          </p>
+
+                          <p className="mt-3 text-sm leading-7 text-slate-200">
+                            {project.contribution}
+                          </p>
+                        </div>
+                      </ScrollReveal>
+
+                      {/* TOOLS REVEAL INDIVIDUALLY */}
+                      <div className="mt-7 flex flex-wrap gap-2">
+                        {project.tools.map((tool, toolIndex) => (
+                          <ScrollReveal
+                            key={tool}
+                            delay={Math.min(toolIndex * 0.04, 0.2)}
+                          >
+                            <span className="inline-block rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-300">
+                              {tool}
+                            </span>
+                          </ScrollReveal>
+                        ))}
+                      </div>
+
+                      {/* WEBSITE LINK */}
+                      <div className="mt-auto pt-9">
+                        <ScrollReveal delay={0.1}>
+                          {project.url ? (
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`Visit ${project.name} website (opens in a new tab)`}
+                              className={`inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 ${theme.border}`}
+                            >
+                              Visit Live Website
+
+                              <span
+                                aria-hidden="true"
+                                className={theme.text}
+                              >
+                                ↗
+                              </span>
+                            </a>
+                          ) : (
+                            <div className="inline-flex items-center gap-3 rounded-xl border border-amber-300/20 bg-amber-300/[0.05] px-4 py-3 text-sm text-amber-200">
+                              <span className="h-2 w-2 rounded-full bg-amber-300" />
+                              Webflow Project In Progress
+                            </div>
+                          )}
+                        </ScrollReveal>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </ScrollReveal>
             );
           })}
         </div>
 
         {/* CLOSING MESSAGE */}
         <div className="mt-16 border-t border-white/10 pt-8">
-          <p className="max-w-3xl text-base leading-8 text-slate-400">
-            I enjoy projects where I can combine website work,
-            design, and communication to make information clearer
-            and easier for people to access.
-          </p>
+          <ScrollReveal>
+            <p className="max-w-3xl text-base leading-8 text-slate-400">
+              I enjoy projects where I can combine website work,
+              design, and communication to make information clearer
+              and easier for people to access.
+            </p>
+          </ScrollReveal>
         </div>
       </div>
     </section>

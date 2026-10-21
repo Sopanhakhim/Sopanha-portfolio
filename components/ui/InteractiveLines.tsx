@@ -26,6 +26,9 @@ export default function InteractiveLines() {
     let frameId = 0;
     let visible = false;
 
+    const bubbleSize = 32.5;
+    const bubbleRadius = bubbleSize / 2;
+
     const handleMouseMove = (event: MouseEvent) => {
       targetX = event.clientX;
       targetY = event.clientY;
@@ -49,8 +52,9 @@ export default function InteractiveLines() {
         currentX += (targetX - currentX) * 0.09;
         currentY += (targetY - currentY) * 0.09;
 
-        bubble.style.transform =
-          `translate3d(${currentX - 32.5}px, ${currentY - 32.5}px, 0)`;
+        bubble.style.transform = `translate3d(${
+          currentX - bubbleRadius
+        }px, ${currentY - bubbleRadius}px, 0)`;
       }
 
       frameId = requestAnimationFrame(animate);
@@ -82,8 +86,8 @@ export default function InteractiveLines() {
         top-0
         z-30
         hidden
-        h-[65px]
-        w-[65px]
+        h-[32.5px]
+        w-[32.5px]
         rounded-full
         opacity-0
         md:block
@@ -100,11 +104,11 @@ export default function InteractiveLines() {
           )
         `,
         boxShadow: `
-          0 0 18px rgba(110,231,183,0.3),
-          0 0 35px rgba(59,130,246,0.2),
-          0 0 50px rgba(168,85,247,0.15)
+          0 0 9px rgba(110,231,183,0.3),
+          0 0 18px rgba(59,130,246,0.2),
+          0 0 25px rgba(168,85,247,0.15)
         `,
-        filter: "blur(6px)",
+        filter: "blur(3px)",
         willChange: "transform",
       }}
     />
