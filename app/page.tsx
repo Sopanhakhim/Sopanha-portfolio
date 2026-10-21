@@ -17,34 +17,46 @@ export default function Home() {
   return (
     <main
       id="top"
-      className="relative min-h-screen overflow-x-clip bg-slate-950 text-white"
+      className="
+        relative isolate
+        min-h-screen
+        w-full
+        overflow-x-clip
+        bg-slate-950
+        text-white
+      "
     >
-      {/* BACKGROUND AND INTERACTIVE MOUSE EFFECTS */}
+      {/* BACKGROUND EFFECTS */}
       <SiteBackground />
+
+      {/* MOUSE-FOLLOWING BUBBLE */}
+      {/* Hidden on touch devices by InteractiveLines */}
       <InteractiveLines />
 
-      {/* STICKY NAVIGATION */}
-      <div className="sticky top-0 z-50">
+      {/* RESPONSIVE STICKY NAVIGATION */}
+      <div className="sticky top-0 z-50 w-full">
         <Navbar />
       </div>
 
-      {/* MAIN WEBSITE CONTENT */}
-      <div className="relative z-10">
+      {/* MAIN CONTENT */}
+      <div className="relative z-10 w-full min-w-0">
 
         {/* HERO */}
-        <Hero />
+        <ScrollReveal>
+          <Hero />
+        </ScrollReveal>
 
-        {/* ABOUT ME */}
+        {/* ABOUT */}
         <ScrollReveal>
           <About />
         </ScrollReveal>
 
-        {/* EDUCATION & JOURNEY */}
+        {/* EDUCATION */}
         <ScrollReveal>
           <Journey />
         </ScrollReveal>
 
-        {/* PROJECTS & EXPERIENCE */}
+        {/* PROJECTS AND EXPERIENCE */}
         <div id="experience">
           <ScrollReveal>
             <Projects />
@@ -67,7 +79,9 @@ export default function Home() {
         </ScrollReveal>
 
         {/* FOOTER */}
-        <Footer />
+        <ScrollReveal>
+          <Footer />
+        </ScrollReveal>
 
       </div>
     </main>

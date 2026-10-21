@@ -1,78 +1,48 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 
-type ScrollRevealProps = {
+interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-};
+}
 
 export default function ScrollReveal({
   children,
   className = "",
   delay = 0,
 }: ScrollRevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-
-    if (
-      reduceMotion.matches ||
-      !("IntersectionObserver" in window)
-    ) {
-      setVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
+  const reduceMotion = useReducedMotion();
 
   return (
-    <div
-      ref={ref}
-      className={`
-        transform-gpu
-        transition-[opacity,transform]
-        duration-700
-        ease-out
-        motion-reduce:transition-none
-        ${
-          visible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-8 opacity-0"
-        }
-        ${className}
-      `}
-      style={{
-        transitionDelay: visible ? `${delay}ms` : "0ms",
+    <motion.div
+      className={className}
+      initial={
+        reduceMotion
+          ? false
+          : {
+              opacity: 0,
+              y: 45,
+            }
+      }
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.1,
+      }}
+      transition={{
+        duration: 1.2,
+        delay: reduceMotion ? 0 : delay,
+        ease: [0.22, 1, 0.36, 1],
       }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
